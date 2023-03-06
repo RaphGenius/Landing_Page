@@ -1,0 +1,29 @@
+Site pour être mis en relation avec des profs de dessin
+Faire pour ceux qui souhaite appredre à dessiner
+
+NavBar
+Logo du site 
+Home / notre démarches / Les profils 
+Nous contacter 
+
+3 Partie :
+
+1. Présentation
+
+Encart avec image + nom du site
+petite phrase de description
+Call to action qui amene au formulaire 
+
+2. Les avantages du site
+Divisé en 4 cartes 
+effet sur le hover 
+Carte => Apprentissage personnalité :hover => phrase qui explique pourquoi 
+
+3. Les profils 
+Présentation de plusieurs profils en caroussel 
+
+4. Contacter nous
+Formulaire pour envoyer un mail
+Une fois le mail validé, il s'efface et un message de confirmation est affiché
+
+5. Footer 
