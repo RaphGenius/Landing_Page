@@ -13,3 +13,35 @@ body,
   background-color: #faf2ea;
   color: #ffae9d;
 }
+
+.animation {
+  /* -webkit-animation: colorchange 20s backwards;
+  -moz-animation: colorchange 20s infinite;
+  -o-animation: colorchange 20s infinite;
+  -ms-animation: colorchange 20s infinite; */
+  animation: colorchange 3s forwards;
+}
+
+@keyframes colorchange {
+  0% {
+    color: #b39188;
+  }
+  17% {
+    color: #ccaea4;
+  }
+  34% {
+    color: #1abc9c;
+  }
+  51% {
+    color: #d35400;
+  }
+  68% {
+    color: #392e2c;
+  }
+  85% {
+    color: #b99d80;
+  }
+  100% {
+    color: #226d68;
+  }
+}

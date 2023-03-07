@@ -10,12 +10,15 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.0.16",
+    "framer-motion": "^10.1.0",
     "heroicons": "^2.0.16",
     "react": "^18.2.0",
+    "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",
+    "@types/react-anchor-link-smooth-scroll": "^1.0.2",
     "@types/react-dom": "^18.0.10",
     "@vitejs/plugin-react": "^3.1.0",
     "autoprefixer": "^10.4.13",

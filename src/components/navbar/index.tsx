@@ -2,49 +2,85 @@ import useMediaQuery from "../../hooks/useMediaQuery";
 import Logo from "../../assets/logo.png";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import { useEffect, useState } from "react";
-
+import Link from "./Link";
+import { SelectedSection } from "../../shared/types";
 type Props = {
   isTopOfPage: boolean;
+  selectedSection: SelectedSection;
+  setSelectedSection: (value: SelectedSection) => void;
 };
 
-const Navbar = ({ isTopOfPage }: Props) => {
+const Navbar = ({
+  isTopOfPage,
+  setSelectedSection,
+  selectedSection,
+}: Props) => {
   const [isToggle, setIsToggle] = useState<boolean>(false);
+  const [isAnimate, setIsAnimate] = useState<boolean>(true);
+  const penAnimation = isAnimate && `animate-bounce `;
   const backgroundColor = isTopOfPage
-    ? "bg-tertiary-100"
+    ? "bg-tertiary-100 drop-shadow-md"
     : "bg-primary-500 md:bg-blend-darken drop-shadow-xl  ";
+  const reverseBackgroundColor = isTopOfPage
+    ? "bg-primary-500 md:bg-blend-darken drop-shadow-xl "
+    : "bg-tertiary-100 drop-shadow-md ";
 
   const isBigScreen = useMediaQuery("(min-width:1024px)");
   useEffect(() => {
     isBigScreen && setIsToggle(false);
-    console.log(isBigScreen);
     return;
   }, [isBigScreen]);
 
   return (
     <nav>
       <div
-        className={`fixed transition-all w-full text-xl text-secondary-100 ${backgroundColor} `}
+        className={`fixed top-0 z-30 transition-all w-full text-xl text-secondary-100 ${backgroundColor} `}
       >
         <div
           className={`w-full h-[100px] flex justify-between items-center px-16`}
         >
           {/* LOGO */}
-          <div className="flex relative items-center w-12 h-12 mr-12">
-            <img src={Logo} alt="Logo" />
-            {/* <h1 className=" absolute -left-5 -bottom-6 font-mukta tracking-widest ">
+          <div className="flex  items-center mr-24  ">
+            <h1
+              className={`font-mukta tracking-widest first-letter:text-3xl  first-letter:font-bold   `}
+            >
               CRAYON
-            </h1> */}
+            </h1>
+            <img
+              onClick={() => setIsAnimate(!isAnimate)}
+              className={` ${penAnimation} w-12 h-12 cursor-pointer transition 
+              } `}
+              src={Logo}
+              alt="Logo"
+            />
           </div>
           {isBigScreen ? (
             <div className="flex items-center justify-between  w-full">
               {/* LES INTITULEES  */}
-              <div className="flex gap-6">
-                <a href="">Accueil</a>
-                <a href="">Notre démarche</a>
-                <a href="">Les profils</a>
+              <div className="flex gap-6 font-martel  ">
+                <Link
+                  selectedSection={selectedSection}
+                  setSelectedSection={setSelectedSection}
+                  page="Home"
+                />
+                <Link
+                  selectedSection={selectedSection}
+                  setSelectedSection={setSelectedSection}
+                  page="Notre démarche"
+                />
+                <Link
+                  selectedSection={selectedSection}
+                  setSelectedSection={setSelectedSection}
+                  page="Les profils"
+                />
               </div>
               {/* Call to action */}
-              <div className="border border-secondary-300 bg-secondary-300 p-2 rounded-md">
+              <div
+                className={`border-4 border-secondary-100
+                drop-shadow-sm p-2 rounded-md ${
+                  isTopOfPage ? "bg-primary-500" : "bg-tertiary-100"
+                }  hover:opacity-90 transition`}
+              >
                 <button>Nous contacter </button>
               </div>{" "}
             </div>
@@ -58,18 +94,32 @@ const Navbar = ({ isTopOfPage }: Props) => {
         </div>
       </div>
       {!isBigScreen && isToggle && (
-        <div className="fixed h-full w-full bg-secondary-300 right-0 top-0 p-4 text-secondary-100 ">
+        <div
+          className={`fixed h-full w-full ${reverseBackgroundColor} right-0 top-0 p-4 text-secondary-100`}
+        >
           <div className=" flex justify-end w-full">
             <button onClick={() => setIsToggle((prev) => !prev)}>
               <XMarkIcon className="h-10 text-white" />
             </button>
           </div>
-          <div className="mt-10">
+          <div className="mt-24">
             {/* LES INTITULEES  */}
             <div className="flex flex-col items-center gap-6 text-2xl">
-              <a href="">Accueil</a>
-              <a href="">Notre démarche</a>
-              <a href="">Les profils</a>
+              <Link
+                selectedSection={selectedSection}
+                setSelectedSection={setSelectedSection}
+                page="Home"
+              />
+              <Link
+                selectedSection={selectedSection}
+                setSelectedSection={setSelectedSection}
+                page="Notre démarche"
+              />
+              <Link
+                selectedSection={selectedSection}
+                setSelectedSection={setSelectedSection}
+                page="Les profils"
+              />
             </div>
           </div>
         </div>

@@ -24,6 +24,10 @@ Présentation de plusieurs profils en caroussel
 
 4. Contacter nous
 Formulaire pour envoyer un mail
+Un formulaire précisant si on est Amateur OU Professionnel
 Une fois le mail validé, il s'efface et un message de confirmation est affiché
 
 5. Footer 
+
+
+Image : https://www.pexels.com/collections/graphic-design-crqttls/
