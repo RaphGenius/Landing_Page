@@ -15,8 +15,11 @@ const Navbar = ({
   setSelectedSection,
   selectedSection,
 }: Props) => {
+  //STATE
   const [isToggle, setIsToggle] = useState<boolean>(false);
   const [isAnimate, setIsAnimate] = useState<boolean>(true);
+
+  // COLORS VARIABLES
   const penAnimation = isAnimate && `animate-bounce `;
   const backgroundColor = isTopOfPage
     ? "bg-tertiary-100 drop-shadow-md"
@@ -31,10 +34,14 @@ const Navbar = ({
     return;
   }, [isBigScreen]);
 
+  useEffect(() => {
+    setIsToggle(false);
+  }, [setSelectedSection]);
+
   return (
     <nav>
       <div
-        className={`fixed top-0 z-30 transition-all w-full text-xl text-secondary-100 ${backgroundColor} `}
+        className={`fixed top-0 z-[51] transition-all w-full text-xl text-secondary-100 ${backgroundColor} `}
       >
         <div
           className={`w-full h-[100px] flex justify-between items-center px-16`}
@@ -81,13 +88,17 @@ const Navbar = ({
                   isTopOfPage ? "bg-primary-500" : "bg-tertiary-100"
                 }  hover:opacity-90 transition`}
               >
-                <button>Nous contacter </button>
+                <button>Devenir un membre</button>
               </div>{" "}
             </div>
           ) : (
             <div className="w-full flex justify-end ">
               <button onClick={() => setIsToggle((prev) => !prev)}>
-                <Bars3Icon className="h-10 " />
+                {isToggle ? (
+                  <XMarkIcon className="h-10" />
+                ) : (
+                  <Bars3Icon className="h-10 " />
+                )}
               </button>
             </div>
           )}
@@ -95,7 +106,7 @@ const Navbar = ({
       </div>
       {!isBigScreen && isToggle && (
         <div
-          className={`fixed h-full w-full ${reverseBackgroundColor} right-0 top-0 p-4 text-secondary-100`}
+          className={`fixed h-full w-full ${reverseBackgroundColor} right-0 top-0 p-4 text-secondary-100 z-50 `}
         >
           <div className=" flex justify-end w-full">
             <button onClick={() => setIsToggle((prev) => !prev)}>
@@ -104,7 +115,10 @@ const Navbar = ({
           </div>
           <div className="mt-24">
             {/* LES INTITULEES  */}
-            <div className="flex flex-col items-center gap-6 text-2xl">
+            <div
+              className="flex flex-col items-center gap-6 text-2xl"
+              onClick={() => setIsToggle(false)}
+            >
               <Link
                 selectedSection={selectedSection}
                 setSelectedSection={setSelectedSection}
