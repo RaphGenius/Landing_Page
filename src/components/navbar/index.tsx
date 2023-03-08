@@ -44,10 +44,10 @@ const Navbar = ({
         className={`fixed top-0 z-[51] transition-all w-full text-xl text-secondary-100 ${backgroundColor} `}
       >
         <div
-          className={`w-full h-[100px] flex justify-between items-center px-16`}
+          className={`w-full h-[100px] flex justify-between items-center px-8 lg:px-16`}
         >
           {/* LOGO */}
-          <div className="flex  items-center mr-24  ">
+          <div className="flex  mr-24  ">
             <h1
               className={`font-mukta tracking-widest first-letter:text-3xl  first-letter:font-bold   `}
             >
@@ -68,7 +68,7 @@ const Navbar = ({
                 <Link
                   selectedSection={selectedSection}
                   setSelectedSection={setSelectedSection}
-                  page="Home"
+                  page="Accueil"
                 />
                 <Link
                   selectedSection={selectedSection}
@@ -122,7 +122,7 @@ const Navbar = ({
               <Link
                 selectedSection={selectedSection}
                 setSelectedSection={setSelectedSection}
-                page="Home"
+                page="Accueil"
               />
               <Link
                 selectedSection={selectedSection}

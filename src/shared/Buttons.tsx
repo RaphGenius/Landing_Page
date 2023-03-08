@@ -14,7 +14,7 @@ function Buttons({ setSelectedSection, text }: Props) {
       href={`#${SelectedSection.Contact}`}
     >
       <button
-        className={`border-black bg-tertiary-100 p-4 rounded-md text-2xl text-white hover:scale-110 transition  `}
+        className={`border-black bg-tertiary-100 p-4 rounded-md text-2xl text-white hover:scale-110 transition hover:shadow-lg  `}
       >
         {text}
       </button>

@@ -8,14 +8,17 @@ type Props = {
 };
 
 const Link = ({ page, selectedSection, setSelectedSection }: Props) => {
-  const lowerCasePage = page.toLowerCase() as SelectedSection;
+  const lowerCasePage = page
+    .toLowerCase()
+    .replace(/ /g, "")
+    .replace("é", "e") as SelectedSection;
+  console.log("TEST " + selectedSection, lowerCasePage);
 
   return (
     <AnchorLink
+      offset="100"
       className={`${
-        page.toLowerCase() === selectedSection
-          ? "text-secondary-300 font-bold"
-          : ""
+        selectedSection === lowerCasePage ? "text-secondary-300 font-bold" : ""
       }  `}
       href={`#${lowerCasePage}`}
       onClick={() => setSelectedSection(lowerCasePage)}

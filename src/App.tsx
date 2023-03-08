@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 import Navbar from "./components/navbar";
 import Accueil from "./components/accueil";
 import { SelectedSection } from "./shared/types";
+import Demarche from "./components/demarche";
 
 function App() {
   const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true);
   const [selectedSection, setSelectedSection] = useState<SelectedSection>(
-    SelectedSection.Home
+    SelectedSection.Accueil
   );
 
   useEffect(() => {
@@ -33,6 +34,7 @@ function App() {
         selectedSection={selectedSection}
       />
       <Accueil setSelectedSection={setSelectedSection} />
+      <Demarche setSelectedSection={setSelectedSection} />
     </div>
   );
 }

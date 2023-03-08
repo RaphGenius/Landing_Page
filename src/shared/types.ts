@@ -1,6 +1,12 @@
 export enum SelectedSection {
-  Home = "home",
-  Avantages = "avantages",
+  Accueil = "accueil",
+  Demarche = "notredemarche",
   Profils = "profils",
   Contact = "contact",
+}
+
+export interface CardTypes {
+  icon: JSX.Element;
+  title: string;
+  description: string;
 }
