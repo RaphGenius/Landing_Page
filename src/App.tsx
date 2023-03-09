@@ -3,6 +3,7 @@ import Navbar from "./components/navbar";
 import Accueil from "./components/accueil";
 import { SelectedSection } from "./shared/types";
 import Demarche from "./components/demarche";
+import Profils from "./components/profils";
 
 function App() {
   const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true);
@@ -35,6 +36,7 @@ function App() {
       />
       <Accueil setSelectedSection={setSelectedSection} />
       <Demarche setSelectedSection={setSelectedSection} />
+      <Profils setSelectedSection={setSelectedSection} />
     </div>
   );
 }

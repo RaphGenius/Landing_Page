@@ -40,7 +40,7 @@ const cards: Array<CardTypes> = [
 
 const Demarche = ({ setSelectedSection }: Props) => {
   return (
-    <section id="notredemarche" className="mt-[50px] px-8 py-6">
+    <section id="notredemarche" className=" px-8 py-6">
       <motion.div
         onViewportEnter={() => setSelectedSection(SelectedSection.Demarche)}
       >
@@ -63,7 +63,7 @@ const Demarche = ({ setSelectedSection }: Props) => {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.4 }}
           variants={container}
           className="mt-5 group  flex-col  lg:flex-row  justify-between gap-8 flex  "
         >

@@ -22,7 +22,14 @@ effet sur le hover
 Carte => Apprentissage personnalité :hover => phrase qui explique pourquoi 
 
 3. Les profils 
+1ere partie : 
+Text a gauche avec une partie pour amateur et une pour professionnel 
+image à droite 
+Resp : Pas d'image
+
 Présentation de plusieurs profils en caroussel 
+hover : un dessin de l'artiste apparait (recuperer depuis une ia )
+profil depuis un site https://unsplash.com/s/photos/portrait
 
 4. Contacter nous
 Formulaire pour envoyer un mail

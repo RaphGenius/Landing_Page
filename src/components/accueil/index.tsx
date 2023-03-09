@@ -56,7 +56,7 @@ function Accueil({ setSelectedSection }: Props) {
           whileInView="visible"
           // L'animation ne se joue qu'une fois
           viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.8, delay: 2.5 }}
+          transition={{ duration: 0.5, delay: 2.8 }}
           variants={{
             hidden: { opacity: 0, y: 50 },
             visible: { opacity: 1, y: 0 },
