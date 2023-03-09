@@ -64,7 +64,7 @@ function DrawBox({}: Props) {
   };
 
   return (
-    <div className=" relative bg-white mx-auto">
+    <div className=" hidden lg:block relative bg-white mx-auto">
       <button
         className="absolute p-8 border-2 shadow-sm"
         onClick={() => setToErase()}

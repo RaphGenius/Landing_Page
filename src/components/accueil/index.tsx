@@ -27,7 +27,7 @@ function Accueil({ setSelectedSection }: Props) {
   };
 
   return (
-    <section id="accueil" className="mt-[50px] px-8 ">
+    <section id="accueil" className="mt-[50px] px-8   ">
       <motion.div
         onViewportEnter={() => setSelectedSection(SelectedSection.Accueil)}
       >

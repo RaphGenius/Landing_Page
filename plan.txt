@@ -30,6 +30,7 @@ Resp : Pas d'image
 Présentation de plusieurs profils en caroussel 
 hover : un dessin de l'artiste apparait (recuperer depuis une ia )
 profil depuis un site https://unsplash.com/s/photos/portrait
+Depuis api les photos : https://randomuser.me/api//?nat=fr&inc=name,location,dob,picture&results=10
 
 4. Contacter nous
 Formulaire pour envoyer un mail

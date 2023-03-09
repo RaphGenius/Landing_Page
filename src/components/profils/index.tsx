@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import Title from "../../shared/Title";
 import { SelectedSection } from "../../shared/types";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import ProfilBox from "./ProfilBox";
 import illutration3 from "../../assets/illustration2-mini.png";
 import illutration4 from "../../assets/illustration4-resized.jpg";
@@ -44,7 +44,7 @@ function Profils({ setSelectedSection }: Props) {
           </button>
           <button
             onClick={() => setChosenProfil("dessin")}
-            className={`${btnSelect} ${
+            className={`hidden lg:block ${btnSelect} ${
               chosenProfil === "dessin" && btnIsSelected
             }    `}
           >
@@ -57,10 +57,10 @@ function Profils({ setSelectedSection }: Props) {
           {/* AFFICHAGE BOITE */}
           {chosenProfil === "amateur" && (
             <ProfilBox
-              title={"J'ai envie d'apprendre"}
+              title={"Le dessin n'aura plus de secret pour vous !"}
               imageSrc={illutration3}
             />
-          )}
+          )}{" "}
           {chosenProfil === "pro" && (
             <ProfilBox
               title={"J'ai envie d'enseigner"}
