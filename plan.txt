@@ -41,3 +41,5 @@ Une fois le mail validé, il s'efface et un message de confirmation est affiché
 
 
 Image : https://www.pexels.com/collections/graphic-design-crqttls/
+
+Clé API PEXEL : 54d8pFwsznbbD0P0Lxu1yL7gjFyeFBpC1XYus5CgHkXOtA2VYBipqpib

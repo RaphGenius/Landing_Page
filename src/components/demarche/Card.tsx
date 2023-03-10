@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { CardTypes } from "../../shared/types";
-
+import { motion } from "framer-motion";
 type Props = {
   card: CardTypes;
   index: number;
@@ -16,7 +16,7 @@ const Card = ({ card, index }: Props) => {
   } `;
 
   return (
-    <div
+    <motion.div
       className={`border-2 shadow-xl    border-tertiary-300 h-auto rounded-lg flex flex-col  gap-8 py-12 px-4   duration-500 transition   opacity-100 ${hoverEffectCard} `}
       onMouseEnter={() => setIsHover(index)}
       onMouseLeave={() => setIsHover(null)}
@@ -42,7 +42,7 @@ const Card = ({ card, index }: Props) => {
           distinctio. Non nostrum minima doloremque ipsam?
         </p>{" "}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

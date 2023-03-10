@@ -11,12 +11,6 @@ type Props = {
   setSelectedSection: (value: SelectedSection) => void;
 };
 
-const container = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.2 },
-  },
-};
 const cards: Array<CardTypes> = [
   {
     icon: <UserIcon />,
@@ -40,8 +34,17 @@ const cards: Array<CardTypes> = [
 
 const Demarche = ({ setSelectedSection }: Props) => {
   return (
-    <section id="notredemarche" className=" mt-[50px] px-8 py-6">
+    <section id="notredemarche" className=" mt-[50px] px-8 py-6  ">
       <motion.div
+        initial="hidden"
+        whileInView="visible"
+        // L'animation ne se joue qu'une fois
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.5 }}
+        variants={{
+          hidden: { opacity: 0, x: -50 },
+          visible: { opacity: 1, x: 0 },
+        }}
         onViewportEnter={() => setSelectedSection(SelectedSection.Demarche)}
       >
         <div>
@@ -60,13 +63,7 @@ const Demarche = ({ setSelectedSection }: Props) => {
         </div>
         {/* LES CARTES  */}
 
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.4 }}
-          variants={container}
-          className="mt-5 group  flex-col  lg:flex-row  justify-between gap-8 flex  "
-        >
+        <motion.div className="mt-5 group  flex-col  lg:flex-row  justify-between gap-8 flex  ">
           {cards.map((card: CardTypes, index) => (
             <Card key={index} card={card} index={index} />
           ))}

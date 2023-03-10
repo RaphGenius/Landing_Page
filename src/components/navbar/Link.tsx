@@ -12,7 +12,6 @@ const Link = ({ page, selectedSection, setSelectedSection }: Props) => {
     .toLowerCase()
     .replace(/ /g, "")
     .replace("é", "e") as SelectedSection;
-  console.log("TEST " + selectedSection, lowerCasePage);
 
   return (
     <AnchorLink

@@ -27,14 +27,15 @@ function Accueil({ setSelectedSection }: Props) {
   };
 
   return (
-    <section id="accueil" className="mt-[50px] px-8   ">
+    <section id="accueil" className="mt-[50px] px-8    ">
       <motion.div
+        viewport={{ amount: 0.8 }}
         onViewportEnter={() => setSelectedSection(SelectedSection.Accueil)}
       >
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.2 }}
           variants={container}
           className=" w-full flex items-center justify-center relative gap-2 "
         >

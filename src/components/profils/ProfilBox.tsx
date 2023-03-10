@@ -42,7 +42,7 @@ const ProfilBox = ({ title, imageSrc }: Props) => {
             </h3>
             <p className="text-justify my-4">
               {title === "Le dessin n'aura plus de secret pour vous !" &&
-                "etipsaet iectet uectetuec tetuectetups dolorem errora et ipsdolorem erroraet ipsa "}
+                "etipsaet iectet uectetuec tetuectetups dolorem errora et ipsdolorem erroraet ipsa  "}
               Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               Perferendis optio iusto ipsa quisquam laboriosam non. Eaque
               obcaecati qui, rerum consequuntur quas ullam adipisci eveniet
