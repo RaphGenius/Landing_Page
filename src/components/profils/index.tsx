@@ -22,7 +22,7 @@ function Profils({ setSelectedSection }: Props) {
         initial="hidden"
         whileInView="visible"
         // L'animation ne se joue qu'une fois
-        viewport={{ once: true, amount: 0.5 }}
+        viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.8 }}
         variants={{
           hidden: { opacity: 0, y: -50 },

@@ -17,7 +17,7 @@ const Card = ({ card, index }: Props) => {
 
   return (
     <motion.div
-      className={`border-2 shadow-xl    border-tertiary-300 h-auto rounded-lg flex flex-col  gap-8 py-12 px-4   duration-500 transition   opacity-100 ${hoverEffectCard} `}
+      className={`border-2 shadow-xl cursor-pointer    border-tertiary-300 h-auto rounded-lg flex flex-col  gap-8 py-12 px-4   duration-500 transition   opacity-100 ${hoverEffectCard} `}
       onMouseEnter={() => setIsHover(index)}
       onMouseLeave={() => setIsHover(null)}
     >
