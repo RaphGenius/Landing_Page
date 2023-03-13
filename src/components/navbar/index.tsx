@@ -140,6 +140,11 @@ const Navbar = ({
                 setSelectedSection={setSelectedSection}
                 page="Les profils"
               />
+              <Link
+                selectedSection={selectedSection}
+                setSelectedSection={setSelectedSection}
+                page="Nous Contacter"
+              />
             </div>
           </div>
         </div>

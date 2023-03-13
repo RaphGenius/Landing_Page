@@ -5,6 +5,7 @@ import { SelectedSection } from "./shared/types";
 import Demarche from "./components/demarche";
 import Profils from "./components/profils";
 import Form from "./components/formulaire";
+import Footer from "./components/footer";
 
 function App() {
   const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true);
@@ -29,7 +30,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App   ">
+    <div className="App ">
       <Navbar
         isTopOfPage={isTopOfPage}
         setSelectedSection={setSelectedSection}
@@ -39,6 +40,7 @@ function App() {
       <Demarche setSelectedSection={setSelectedSection} />
       <Profils setSelectedSection={setSelectedSection} />
       <Form setSelectedSection={setSelectedSection} />
+      <Footer />
     </div>
   );
 }

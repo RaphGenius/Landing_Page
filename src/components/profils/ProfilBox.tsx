@@ -9,7 +9,7 @@ type Props = {
 
 const ProfilBox = ({ title, imageSrc }: Props) => {
   const divRef = useRef<HTMLDivElement>(null);
-
+  console.log(divRef);
   const scrolltoTop = () => {
     divRef?.current?.scroll({
       top: 0,

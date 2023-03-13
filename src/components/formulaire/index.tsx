@@ -18,11 +18,14 @@ function Form({ setSelectedSection }: Props) {
   const [roleSelected, setRoleSelected] = useState<number>(0);
   const nomRef = useRef<HTMLInputElement>(null);
 
+  const divRef = useRef<HTMLDivElement>(null);
+
   const handleSubmit = (e: any) => {
     e.preventDefault();
     setTimeout(() => {
       setIsFormSend(true);
     }, 500);
+
     console.log(roleSelected);
     console.log(isFormSend);
   };
@@ -65,6 +68,21 @@ function Form({ setSelectedSection }: Props) {
           >
             {/* FORM */}
             <div className="flex flex-col ">
+              <div className={`${containerInput}`}>
+                <label className={`${label}`} htmlFor="nom">
+                  Nom de famille
+                </label>
+                <input
+                  ref={nomRef}
+                  disabled={isFormSend}
+                  type="text"
+                  name="nom"
+                  id="nom"
+                  placeholder="Mon nom de famille"
+                  required
+                  className={`${input}`}
+                />
+              </div>
               <div className={`${containerInput}  `}>
                 <label
                   className={`${label} focus-within:scale-125   `}
@@ -82,17 +100,19 @@ function Form({ setSelectedSection }: Props) {
                   className={`${input}`}
                 />
               </div>
-              <div className={`${containerInput}`}>
-                <label className={`${label}`} htmlFor="nom">
-                  Nom de famille
+              <div className={`${containerInput}  `}>
+                <label
+                  className={`${label} focus-within:scale-125   `}
+                  htmlFor="mail"
+                >
+                  Adresse mail
                 </label>
                 <input
-                  ref={nomRef}
                   disabled={isFormSend}
-                  type="text"
-                  name="nom"
-                  id="nom"
-                  placeholder="Mon nom de famille"
+                  type="email"
+                  name="mail"
+                  id="mail"
+                  placeholder="Mon adresse mail"
                   required
                   className={`${input}`}
                 />
@@ -119,6 +139,7 @@ function Form({ setSelectedSection }: Props) {
                 </label>
                 <textarea
                   disabled={isFormSend}
+                  required
                   className="h-full p-4 rounded-xl focus:scale-105 transition "
                   placeholder="C'est ici que vous pouvez écrire votre message et faire part de votre demande ! "
                   name="message"
@@ -164,9 +185,17 @@ function Form({ setSelectedSection }: Props) {
           </div>
         </div>
         {isFormSend && (
-          <div className="my-4 w-full  text-2xl md:text-center lg:text-start border-t-4 border-t-tertiary-300 border-l-8 border-l-tertiary-100 shadow-lg p-4 ">
+          <div
+            ref={divRef}
+            id="valideMessage"
+            className="my-4 w-full  text-2xl md:text-center lg:text-start border-t-4 border-t-tertiary-300 border-l-8 border-l-tertiary-100 shadow-lg p-4 "
+          >
             <p>
-              Nous avons bien reçu votre demande M/Mme {nomRef?.current?.value}.
+              Nous avons bien reçu votre demande{" "}
+              <span className="font-bold">
+                {" "}
+                M/Mme {nomRef?.current?.value}.
+              </span>
               Vous êtes inscrit(e) en tant que dessinateur/dessinatrice{" "}
               <span className="font-bold">
                 {" "}
