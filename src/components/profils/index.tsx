@@ -71,7 +71,7 @@ function Profils({ setSelectedSection }: Props) {
           )}{" "}
           {chosenProfil === "pro" && (
             <ProfilBox
-              title={"J'ai envie d'enseigner"}
+              title={"J'ai envie de transmettre ma passion!"}
               imageSrc={illutration4}
             />
           )}

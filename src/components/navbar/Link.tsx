@@ -17,7 +17,9 @@ const Link = ({ page, selectedSection, setSelectedSection }: Props) => {
     <AnchorLink
       offset="100"
       className={`${
-        selectedSection === lowerCasePage ? "text-secondary-300 font-bold" : ""
+        selectedSection === lowerCasePage
+          ? "text-primary-300 font-bold scale-105 transition underline underline-offset-4"
+          : ""
       }  `}
       href={`#${lowerCasePage}`}
       onClick={() => setSelectedSection(lowerCasePage)}

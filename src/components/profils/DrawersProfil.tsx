@@ -12,7 +12,7 @@ type Props = {
     photographer_id: string;
     photographer_url: string;
     src: {
-      small: string;
+      large: string;
     };
     url: string;
     width: number;
@@ -28,7 +28,7 @@ function DrawersProfil({ draw, photo }: Props) {
   const NameCreator = first + " " + last;
   const profilStatut = age < 55 ? "Amateur" : "Enseignant";
 
-  const imageArtiste = photo?.src?.small;
+  const imageArtiste = photo?.src?.large;
 
   return (
     <li className="  cursor-pointer bg-tertiary-100  rounded-lg h-[400px] p-8 first-of-type:rounded-l-none last-of-type:rounded-r-none relative   ">

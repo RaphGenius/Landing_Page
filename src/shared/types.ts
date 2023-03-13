@@ -2,7 +2,7 @@ export enum SelectedSection {
   Accueil = "accueil",
   Demarche = "notredemarche",
   Profils = "lesprofils",
-  Contact = "contact",
+  Contact = "nouscontacter",
 }
 
 export interface CardTypes {
@@ -31,4 +31,11 @@ export interface Drawers {
     date: string;
   };
   photo: object;
+}
+
+export interface FormType {
+  role: "amateur" | "professionnel";
+  prenom: string;
+  nom: string;
+  message: string;
 }

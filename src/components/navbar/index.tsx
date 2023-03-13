@@ -47,7 +47,7 @@ const Navbar = ({
           className={`w-full h-[100px] flex justify-between items-center px-8 lg:px-16`}
         >
           {/* LOGO */}
-          <div className="flex  mr-24  ">
+          <div className="flex  mr-12  ">
             <h1
               className={`font-mukta tracking-widest first-letter:text-3xl  first-letter:font-bold   `}
             >
@@ -88,7 +88,13 @@ const Navbar = ({
                   isTopOfPage ? "bg-primary-500" : "bg-tertiary-100"
                 }  hover:opacity-90 transition`}
               >
-                <button>Devenir un membre</button>
+                <button>
+                  <Link
+                    selectedSection={selectedSection}
+                    setSelectedSection={setSelectedSection}
+                    page="Nous Contacter"
+                  />
+                </button>
               </div>{" "}
             </div>
           ) : (
