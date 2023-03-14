@@ -1,23 +1,14 @@
 import { useEffect, useState } from "react";
-import { createClient } from "pexels";
 import { Drawers } from "../../shared/types";
 import DrawersProfil from "./DrawersProfil";
 
-type Props = {};
-
-type photoType = {
-  photo: string;
-};
 interface ResultPhoto {
   src?: {
     large?: string;
   };
 }
 
-const client = createClient(import.meta.env.VITE_API_PEXEL);
-
-const query = "3D";
-function Carroussel({}: Props) {
+function Carroussel() {
   const [drawers, setDrawers] = useState<Array<Drawers>>([]);
   const [allPhotos, SetAllPhotos] = useState<Array<ResultPhoto>>([]);
 
@@ -28,17 +19,19 @@ function Carroussel({}: Props) {
       .then((data) => setDrawers(data.results as Array<Drawers>));
   }, []);
 
-  //Recupere les photos
   useEffect(() => {
-    try {
-      client.photos
-        .search({ query, per_page: 15 })
-        .then((photo: any) => SetAllPhotos(photo?.photos));
-    } catch (err) {
-      console.log("Err de chargement photo " + err);
-    }
+    fetch("https://api.pexels.com/v1/search?query=3D", {
+      headers: {
+        Authorization: import.meta.env.VITE_API_PEXEL,
+      },
+    })
+      .then((resp) => {
+        return resp.json();
+      })
+      .then((data) => {
+        SetAllPhotos(data.photos);
+      });
   }, []);
-
   return (
     <article className="my-8">
       <h3 className="text-center text-4xl py-8 underline underline-offset-2 ">
