@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import ProfilBox from "./ProfilBox";
 import illutration3 from "../../assets/illustration2-mini.png";
 import illutration4 from "../../assets/illustration4-resized.jpg";
-import DrawBox from "./DrawBox";
+import { DrawBox } from "./DrawBox";
 import CarrousselProfil from "./Carroussel";
 type Props = {
   setSelectedSection: (value: SelectedSection) => void;

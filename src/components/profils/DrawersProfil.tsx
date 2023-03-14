@@ -1,22 +1,7 @@
 import { Drawers } from "../../shared/types";
 type Props = {
   draw: Drawers;
-
-  photo: {
-    alt: string;
-    avg_color: string;
-    height: number;
-    id: number;
-    liked: boolean;
-    photographer: string;
-    photographer_id: string;
-    photographer_url: string;
-    src: {
-      large: string;
-    };
-    url: string;
-    width: number;
-  };
+  photo: string;
 };
 
 function DrawersProfil({ draw, photo }: Props) {
@@ -27,8 +12,6 @@ function DrawersProfil({ draw, photo }: Props) {
   } = draw;
   const NameCreator = first + " " + last;
   const profilStatut = age < 55 ? "Amateur" : "Enseignant";
-
-  const imageArtiste = photo?.src?.large;
 
   return (
     <li className="  cursor-pointer bg-tertiary-100  rounded-lg h-[400px] p-8 first-of-type:rounded-l-none last-of-type:rounded-r-none relative   ">
@@ -49,7 +32,7 @@ function DrawersProfil({ draw, photo }: Props) {
         <div className="opacity-0 translate-y-14 hover:translate-y-0 hover:opacity-100 duration-500 absolute w-full h-full  top-0 left-0  ">
           <img
             className="  translate-y-64 hover:translate-y-0  duration-500  w-full h-full object-cover rounded-lg "
-            src={imageArtiste}
+            src={photo}
             alt={`Illustration de ${NameCreator}`}
           />
         </div>

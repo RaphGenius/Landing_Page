@@ -5,21 +5,12 @@ import DrawersProfil from "./DrawersProfil";
 
 type Props = {};
 
+type photoType = {
+  photo: string;
+};
 interface ResultPhoto {
-  photo: {
-    alt: string;
-    avg_color: string;
-    height: number;
-    id: number;
-    liked: boolean;
-    photographer: string;
-    photographer_id: string;
-    photographer_url: string;
-    src: {
-      small: string;
-    };
-    url: string;
-    width: number;
+  src?: {
+    large?: string;
   };
 }
 
@@ -42,7 +33,7 @@ function Carroussel({}: Props) {
     try {
       client.photos
         .search({ query, per_page: 15 })
-        .then((photo) => SetAllPhotos(photo?.photos));
+        .then((photo: any) => SetAllPhotos(photo?.photos));
     } catch (err) {
       console.log("Err de chargement photo " + err);
     }
@@ -55,12 +46,12 @@ function Carroussel({}: Props) {
       </h3>
       <div className="w-full shadow-lg hidden lg:block ">
         <ul className="flex gap-8  flex-nowrap overflow-x-scroll first-of-type:rounded-none  overflow-y-hidden">
-          {drawers.map((draw, index) => (
+          {drawers.map((draw: Drawers, index: number) => (
             <DrawersProfil
               key={index}
               draw={draw}
-              photo={allPhotos[index] as ResultPhoto}
-            />
+              photo={allPhotos[index]?.src?.large as string}
+            ></DrawersProfil>
           ))}
         </ul>
       </div>

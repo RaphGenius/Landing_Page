@@ -1,12 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { BsFillEraserFill, BsFillPencilFill } from "react-icons/bs";
-type Props = {};
 
-const colorChoice = ["#137C8B", "#CCAEA4", "#226D68", "#fecc00"];
-
-function DrawBox({}: Props) {
-  const canvasRef = useRef(null);
-  const contextRef = useRef(null);
+export const DrawBox = () => {
+  const canvasRef = useRef<any>(null);
+  const contextRef = useRef<any>(null);
 
   const [isDrawing, setIsDrawing] = useState(false);
 
@@ -22,7 +19,7 @@ function DrawBox({}: Props) {
     contextRef.current = context;
   }, []);
 
-  const startDrawing = ({ nativeEvent }) => {
+  const startDrawing = ({ nativeEvent }: any) => {
     const { offsetX, offsetY } = nativeEvent;
     contextRef.current.beginPath();
     contextRef.current.moveTo(offsetX, offsetY);
@@ -32,7 +29,7 @@ function DrawBox({}: Props) {
     nativeEvent.preventDefault();
   };
 
-  const draw = ({ nativeEvent }) => {
+  const draw = ({ nativeEvent }: any) => {
     if (!isDrawing) {
       return;
     }
@@ -56,7 +53,7 @@ function DrawBox({}: Props) {
     contextRef.current.globalCompositeOperation = "destination-out";
   };
 
-  const saveImageToLocal = (event) => {
+  const saveImageToLocal = (event: any) => {
     let link = event.currentTarget;
     link.setAttribute("download", "canvas.png");
     let image = canvasRef.current.toDataURL("image/png");
@@ -89,5 +86,4 @@ function DrawBox({}: Props) {
       ></canvas>
     </div>
   );
-}
-export default DrawBox;
+};
