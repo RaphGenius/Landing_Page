@@ -188,13 +188,13 @@ function Form({ setSelectedSection }: Props) {
           <div
             ref={divRef}
             id="valideMessage"
-            className="my-4 w-full  text-2xl md:text-center lg:text-start border-t-4 border-t-tertiary-300 border-l-8 border-l-tertiary-100 shadow-lg p-4 "
+            className="my-12 w-full  text-2xl md:text-center lg:text-start border-t-4 border-t-tertiary-300 border-l-8 border-l-tertiary-100 shadow-lg p-4 "
           >
             <p>
               Nous avons bien reçu votre demande{" "}
               <span className="font-bold">
                 {" "}
-                M/Mme {nomRef?.current?.value}.
+                monsieur/madame {nomRef?.current?.value}.
               </span>
               Vous êtes inscrit(e) en tant que dessinateur/dessinatrice{" "}
               <span className="font-bold">
@@ -204,7 +204,7 @@ function Form({ setSelectedSection }: Props) {
             </p>
             <p className="">
               Nous allons vous contacter très prochainement, restez à l'affus de
-              vos mail !
+              vos mails !
             </p>
           </div>
         )}

@@ -32,7 +32,7 @@ function DrawersProfil({ draw, photo }: Props) {
 
   return (
     <li className="  cursor-pointer bg-tertiary-100  rounded-lg h-[400px] p-8 first-of-type:rounded-l-none last-of-type:rounded-r-none relative   ">
-      <div className="lg:w-[300px] w-screen h-full flex flex-col justify-between    ">
+      <div className="lg:w-[300px] w-screen h-full flex flex-col justify-between overflow-hidden    ">
         {/* PHOTO ARTISTE */}
         <div className=" h-[200px] mx-auto rounded-full  overflow-hidden  overflow-x-hidden flex justify-center   ">
           <img
@@ -48,7 +48,7 @@ function DrawersProfil({ draw, photo }: Props) {
         </div>
         <div className="opacity-0 translate-y-14 hover:translate-y-0 hover:opacity-100 duration-500 absolute w-full h-full  top-0 left-0  ">
           <img
-            className="  translate-y-64 hover:translate-y-0  duration-500  w-full h-full object-cover"
+            className="  translate-y-64 hover:translate-y-0  duration-500  w-full h-full object-cover rounded-lg "
             src={imageArtiste}
             alt={`Illustration de ${NameCreator}`}
           />

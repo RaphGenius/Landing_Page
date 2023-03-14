@@ -18,7 +18,7 @@ function Accueil({ setSelectedSection }: Props) {
   const container = {
     hidden: {},
     visible: {
-      transition: { staggerChildren: 0.5 },
+      transition: { staggerChildren: 0.4 },
     },
   };
   const childVariant = {
@@ -57,7 +57,7 @@ function Accueil({ setSelectedSection }: Props) {
           whileInView="visible"
           // L'animation ne se joue qu'une fois
           viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.5, delay: 2.8 }}
+          transition={{ duration: 0.5, delay: 2.2 }}
           variants={{
             hidden: { opacity: 0, y: 50 },
             visible: { opacity: 1, y: 0 },
@@ -86,7 +86,7 @@ function Accueil({ setSelectedSection }: Props) {
           animate="visible"
           // L'animation ne se joue qu'une fois
           viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 1, delay: 2.2 }}
+          transition={{ duration: 0.5, delay: 2.5 }}
           variants={{
             hidden: { opacity: 0, y: 50 },
             visible: { opacity: 1, y: 0 },
